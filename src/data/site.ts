@@ -10,8 +10,7 @@ export const company = {
   founder: "Mr. Sagar Agravat",
   social: {
     facebook: "https://www.facebook.com/merchantexporterhorizonexim?mibextid=LQQJ4d",
-    instagram:
-      "https://www.instagram.com/horizon_exim/?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr",
+    instagram: "https://www.instagram.com/horizon_exim/?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr",
     linkedin: "https://www.linkedin.com/company/horizon-exim/",
     youtube: "https://www.youtube.com/@hiiem-ExportImportBusiness",
   },

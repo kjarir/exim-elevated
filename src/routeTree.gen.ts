@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ConfectioneryRouteImport } from './routes/confectionery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FlourRouteImport } from './routes/flour'
+import { Route as FrozenRouteImport } from './routes/frozen'
+import { Route as FruitsRouteImport } from './routes/fruits'
+import { Route as MakhanaRouteImport } from './routes/makhana'
+import { Route as OnionRouteImport } from './routes/onion'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as RiceRouteImport } from './routes/rice'
+import { Route as SaltRouteImport } from './routes/salt'
+import { Route as SpicesRouteImport } from './routes/spices'
+import { Route as VegetablesRouteImport } from './routes/vegetables'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfectioneryRoute = ConfectioneryRouteImport.update({
+  id: '/confectionery',
+  path: '/confectionery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlourRoute = FlourRouteImport.update({
+  id: '/flour',
+  path: '/flour',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FrozenRoute = FrozenRouteImport.update({
+  id: '/frozen',
+  path: '/frozen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FruitsRoute = FruitsRouteImport.update({
+  id: '/fruits',
+  path: '/fruits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MakhanaRoute = MakhanaRouteImport.update({
+  id: '/makhana',
+  path: '/makhana',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnionRoute = OnionRouteImport.update({
+  id: '/onion',
+  path: '/onion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RiceRoute = RiceRouteImport.update({
+  id: '/rice',
+  path: '/rice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SaltRoute = SaltRouteImport.update({
+  id: '/salt',
+  path: '/salt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpicesRoute = SpicesRouteImport.update({
+  id: '/spices',
+  path: '/spices',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VegetablesRoute = VegetablesRouteImport.update({
+  id: '/vegetables',
+  path: '/vegetables',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/confectionery': typeof ConfectioneryRoute
+  '/contact': typeof ContactRoute
+  '/flour': typeof FlourRoute
+  '/frozen': typeof FrozenRoute
+  '/fruits': typeof FruitsRoute
+  '/makhana': typeof MakhanaRoute
+  '/onion': typeof OnionRoute
+  '/products': typeof ProductsRoute
+  '/rice': typeof RiceRoute
+  '/salt': typeof SaltRoute
+  '/spices': typeof SpicesRoute
+  '/vegetables': typeof VegetablesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/confectionery': typeof ConfectioneryRoute
+  '/contact': typeof ContactRoute
+  '/flour': typeof FlourRoute
+  '/frozen': typeof FrozenRoute
+  '/fruits': typeof FruitsRoute
+  '/makhana': typeof MakhanaRoute
+  '/onion': typeof OnionRoute
+  '/products': typeof ProductsRoute
+  '/rice': typeof RiceRoute
+  '/salt': typeof SaltRoute
+  '/spices': typeof SpicesRoute
+  '/vegetables': typeof VegetablesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/confectionery': typeof ConfectioneryRoute
+  '/contact': typeof ContactRoute
+  '/flour': typeof FlourRoute
+  '/frozen': typeof FrozenRoute
+  '/fruits': typeof FruitsRoute
+  '/makhana': typeof MakhanaRoute
+  '/onion': typeof OnionRoute
+  '/products': typeof ProductsRoute
+  '/rice': typeof RiceRoute
+  '/salt': typeof SaltRoute
+  '/spices': typeof SpicesRoute
+  '/vegetables': typeof VegetablesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/confectionery'
+    | '/contact'
+    | '/flour'
+    | '/frozen'
+    | '/fruits'
+    | '/makhana'
+    | '/onion'
+    | '/products'
+    | '/rice'
+    | '/salt'
+    | '/spices'
+    | '/vegetables'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/confectionery'
+    | '/contact'
+    | '/flour'
+    | '/frozen'
+    | '/fruits'
+    | '/makhana'
+    | '/onion'
+    | '/products'
+    | '/rice'
+    | '/salt'
+    | '/spices'
+    | '/vegetables'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/confectionery'
+    | '/contact'
+    | '/flour'
+    | '/frozen'
+    | '/fruits'
+    | '/makhana'
+    | '/onion'
+    | '/products'
+    | '/rice'
+    | '/salt'
+    | '/spices'
+    | '/vegetables'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ConfectioneryRoute: typeof ConfectioneryRoute
+  ContactRoute: typeof ContactRoute
+  FlourRoute: typeof FlourRoute
+  FrozenRoute: typeof FrozenRoute
+  FruitsRoute: typeof FruitsRoute
+  MakhanaRoute: typeof MakhanaRoute
+  OnionRoute: typeof OnionRoute
+  ProductsRoute: typeof ProductsRoute
+  RiceRoute: typeof RiceRoute
+  SaltRoute: typeof SaltRoute
+  SpicesRoute: typeof SpicesRoute
+  VegetablesRoute: typeof VegetablesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confectionery': {
+      id: '/confectionery'
+      path: '/confectionery'
+      fullPath: '/confectionery'
+      preLoaderRoute: typeof ConfectioneryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flour': {
+      id: '/flour'
+      path: '/flour'
+      fullPath: '/flour'
+      preLoaderRoute: typeof FlourRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/frozen': {
+      id: '/frozen'
+      path: '/frozen'
+      fullPath: '/frozen'
+      preLoaderRoute: typeof FrozenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fruits': {
+      id: '/fruits'
+      path: '/fruits'
+      fullPath: '/fruits'
+      preLoaderRoute: typeof FruitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/makhana': {
+      id: '/makhana'
+      path: '/makhana'
+      fullPath: '/makhana'
+      preLoaderRoute: typeof MakhanaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onion': {
+      id: '/onion'
+      path: '/onion'
+      fullPath: '/onion'
+      preLoaderRoute: typeof OnionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rice': {
+      id: '/rice'
+      path: '/rice'
+      fullPath: '/rice'
+      preLoaderRoute: typeof RiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/salt': {
+      id: '/salt'
+      path: '/salt'
+      fullPath: '/salt'
+      preLoaderRoute: typeof SaltRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/spices': {
+      id: '/spices'
+      path: '/spices'
+      fullPath: '/spices'
+      preLoaderRoute: typeof SpicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vegetables': {
+      id: '/vegetables'
+      path: '/vegetables'
+      fullPath: '/vegetables'
+      preLoaderRoute: typeof VegetablesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ConfectioneryRoute: ConfectioneryRoute,
+  ContactRoute: ContactRoute,
+  FlourRoute: FlourRoute,
+  FrozenRoute: FrozenRoute,
+  FruitsRoute: FruitsRoute,
+  MakhanaRoute: MakhanaRoute,
+  OnionRoute: OnionRoute,
+  ProductsRoute: ProductsRoute,
+  RiceRoute: RiceRoute,
+  SaltRoute: SaltRoute,
+  SpicesRoute: SpicesRoute,
+  VegetablesRoute: VegetablesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

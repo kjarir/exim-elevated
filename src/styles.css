@@ -105,7 +105,8 @@
     oklch(0.3 0.06 140) 100%
   );
   --gradient-gold: linear-gradient(100deg, oklch(0.78 0.13 82), oklch(0.86 0.1 92));
-  --shadow-soft: 0 1px 2px oklch(0.24 0.035 150 / 0.05), 0 12px 32px -18px oklch(0.24 0.035 150 / 0.35);
+  --shadow-soft:
+    0 1px 2px oklch(0.24 0.035 150 / 0.05), 0 12px 32px -18px oklch(0.24 0.035 150 / 0.35);
   --shadow-lift: 0 24px 60px -32px oklch(0.24 0.035 150 / 0.55);
 }
 
