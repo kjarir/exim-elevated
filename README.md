@@ -1,24 +1,51 @@
-# Horizon Enhanced
 
-https://www.horizonexim.co.in/index i want to create this exact same website, but much more beautiful and enhanced and make sure every feature and route is there and everything is perfect and proper
+from multiprocessing import Pool
+import os
 
-This project was built with [Lovable](https://lovable.dev).
+def dgim(stream):
+    buckets = []
+    for t, bit in enumerate(stream, start=1):
+        # Remove expired buckets
+        buckets = [b for b in buckets if b[1] > t - len(stream)]
 
-## Build with Lovable
+        if bit == 1:
+            buckets.insert(0, [1, t])
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/780396eb-861c-4df2-b1c4-214e0fe7c44c).
+            while True:
+                sizes = {}
+                for i, b in enumerate(buckets):
+                    sizes.setdefault(b[0], []).append(i)
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+                merged = False
+                for size, idx in sizes.items():
+                    if len(idx) > 2:
+                        i, j = idx[-2], idx[-1]
+                        buckets[i] = [size * 2, buckets[i][1]]
+                        buckets.pop(j)
+                        merged = True
+                        break
 
-## Development
+                if not merged:
+                    break
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+    if not buckets:
+        return 0
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+    return sum(b[0] for b in buckets) - buckets[-1][0] // 2
+
+
+def worker(chunk):
+    return dgim(chunk)
+
+
+if __name__ == "__main__":
+    stream = [1, 0, 1, 1, 0, 1, 0, 1,
+              1, 0, 1, 1, 0, 0, 1, 1]
+
+    chunks = [stream[i:i+4] for i in range(0, len(stream), 4)]
+
+    with Pool(min(len(chunks), os.cpu_count() or 1)) as pool:
+        results = pool.map(worker, chunks)
+
+    print("DGIM Estimated Count:", sum(results))
+    print("Actual Count:", sum(stream))
