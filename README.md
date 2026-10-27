@@ -49,3 +49,26 @@ if __name__ == "__main__":
 
     print("DGIM Estimated Count:", sum(results))
     print("Actual Count:", sum(stream))
+
+
+
+
+Q1. Apply: How does the DGIM algorithm function in a distributed environment?
+
+Answer: The DGIM algorithm divides a data stream into smaller chunks and distributes them among multiple nodes. Each node processes its chunk using buckets to estimate the number of 1s. A coordinator combines the local summaries to calculate the overall count.
+
+Q2. Analyze: What are the challenges of applying DGIM in a distributed system compared to a single machine?
+
+Answer: The main challenges are network communication overhead, synchronization between nodes, maintaining correct timestamps, merging buckets, and handling data arriving out of order. A single machine does not face the same network communication challenges.
+
+Q3. Create: Modify the algorithm to handle varying window sizes across different nodes in the distributed system.
+
+Answer: Assign a separate window size to each node and maintain timestamps for its buckets. Each node removes expired buckets according to its local window. The coordinator uses timestamps and the required global window to combine summaries correctly.
+
+Q4. Evaluate: Assess the scalability of the parallel DGIM algorithm as the number of data streams increases.
+
+Answer: Parallel DGIM can improve scalability because multiple nodes process data simultaneously. However, increasing the number of streams also increases memory usage, communication overhead, and summary-merging costs. Adding more nodes can improve throughput if the workload is distributed efficiently.
+
+Q5. Analyze: How does partitioning the data streams across multiple nodes affect the accuracy and space efficiency of the DGIM algorithm?
+
+Answer: Partitioning allows nodes to process smaller portions of the stream independently, reducing the workload per node. DGIM uses compact buckets to save memory. However, incorrect merging of local summaries or ignoring timestamps and window boundaries can reduce accuracy. Proper synchronization and merging are required for accurate global estimates.
